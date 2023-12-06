@@ -55,7 +55,7 @@ router.post("/buy", async (req,res) => {
     );
 
     // Consume previously placed order from RabbitMQ & acknowledge transaction
-    channel.consume("prouct-service-queue", (data) => {
+    channel.consume("product-service-queue", (data) => {
         console.log("Consumed from product-service-queue");
         order = JSON.parse(data.content);
         channel.ack(data);
