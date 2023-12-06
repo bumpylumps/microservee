@@ -12,7 +12,7 @@ var channel, connection;
 
 require('dotenv').config({path: '.env'})
 
-
+//Connect to DB
 mongoose
     .connect(process.env.DB_URL,{
         useNewUrlParser: true,
@@ -51,7 +51,7 @@ createOrder = (products) => {
 //grab order queue
 connectToRabbitMQ().then(() => {
     channel.consume("order-service-queue", (data) => {
-        // order service queue listening to this one
+        // send new order to RabbitMQ (same queue as product service)
         const { products } = JSON.parse(data.content);
         const newOrder = createOrder(products);
         channel.ack(data);
@@ -62,7 +62,7 @@ connectToRabbitMQ().then(() => {
     });
 });
 
-
+//listen for requests
 app.listen(PORT, () => {
     console.log(`Order-Service listening on port ${PORT}`);
 });
