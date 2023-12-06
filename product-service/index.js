@@ -12,6 +12,9 @@ app.use("/products", productRouter);
 
 require('dotenv').config({path: '.env'})
 
+
+
+//connect to DB
 mongoose
     .connect(process.env.DB_URL, {
         useNewUrlParser: true,

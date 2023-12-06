@@ -69,7 +69,7 @@ router.post("/buy", async (req,res) => {
 });
 
 
-
+//share module w/ app
 module.exports = router; 
 
 
