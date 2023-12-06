@@ -9,10 +9,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended:true }));
 app.use("/products", productRouter);
 
+
+require('dotenv').config({path: '.env'})
+
 mongoose
-    .connect("mongodb://localhost:27017/scan-product-service", {
-        useNewUrlParser: true, 
-        useUnifiedTopology: true, 
+    .connect(process.env.DB_URL, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
     })
     .then(() => console.log("Product-Service Connected to MongoDB"))
     .catch((e) => console.log(e));

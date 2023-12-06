@@ -5,13 +5,16 @@ const mongoose = require("mongoose");
 const amqp = require("amqplib");
 const Order = require("./models/Order");
 
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 var channel, connection; 
 
+require('dotenv').config({path: '.env'})
+
 
 mongoose
-    .connect("mongodb://localhost:27017/scan-order-service",{
+    .connect(process.env.DB_URL,{
         useNewUrlParser: true,
         useUnifiedTopology: true,
     })
