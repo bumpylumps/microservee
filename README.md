@@ -35,7 +35,8 @@
 	4) Check server response
 
 ### Ordering a product from inventory:
-	1) Copy ID from added product (located in the server response window in Postman from adding a product, or alternatively in your MongoDB collection)
+	1) Copy ID from added product (located in the server response window in Postman from adding a product, or
+	 	alternatively in your MongoDB collection)
 	2) Create a POST request to: http://localhost:3001/products/buy
 	3) Set request body to raw JSON text, add field to body: 
 		- "productIds" :  "{paste product ID from step 1}"
@@ -104,8 +105,8 @@ The application features (adding a product, ordering a product) are currently ac
 
 ## Project Takeaways
 
-	This demo was built to demonstrate my ability to build microservices with NodeJS and get a conversation started for interviews. It was nice taking a little time to build these services and work with RabbitMQ, and reminded me how simple it can be to develop services without affecting an entire codebase. Running instances with Docker is always a plus, and it was nice exploring the docs for RabbitMQ and gRPC for possible optimizations. Going forward, it would be nice to build a client to make the application more user friendly. 
+This demo was built to demonstrate my ability to build microservices with NodeJS and get a conversation started for interviews. It was nice taking a little time to build these services and work with RabbitMQ, and reminded me how simple it can be to develop services without affecting an entire codebase. Running instances with Docker is always a plus, and it was nice exploring the docs for RabbitMQ and gRPC for possible optimizations. Going forward, it would be nice to build a client to make the application more user friendly. 
 
-	I was reminded how flexible express servers are and how comfortable with NodeJS I am, while also admiring the depth of its simplicity. Running multiple servers at once is always fun too.
+I was reminded how flexible express servers are and how comfortable with NodeJS I am, while also admiring the depth of its simplicity. Running multiple servers at once is always fun too.
 
 
