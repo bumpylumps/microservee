@@ -35,8 +35,8 @@
 	4) Check server response
 
 ### Ordering a product from inventory:
-	1) Copy ID from added product (located in the server response window in Postman from adding a product, or
-	 	alternatively in your MongoDB collection)
+	1) Copy ID from added product (located in the server response window in Postman from adding a product, 
+		or alternatively in your MongoDB collection)
 	2) Create a POST request to: http://localhost:3001/products/buy
 	3) Set request body to raw JSON text, add field to body: 
 		- "productIds" :  "{paste product ID from step 1}"
