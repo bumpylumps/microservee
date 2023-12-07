@@ -101,7 +101,8 @@ The application features (adding a product, ordering a product) are currently ac
 - Delivery management
 	- an additional service for deliveries could be added to the application 
 
-
+- Scaling up
+	- to make this application prodcution ready, orchestration can be implemented with Kubernetes or a similar automation tools
 
 ## Project Takeaways
 
